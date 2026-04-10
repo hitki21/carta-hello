@@ -3,85 +3,88 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Notebook by Sam</title>
+  <title>Regalo para Abi - Hitki21</title>
+  <meta name="color-scheme" content="light only">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+  <button class="cerrar" onclick="cerrarCuaderno()">✿ Cerrar</button>
+
   <div class="portada" id="portada" onclick="abrirCuaderno()">
     <div class="titulo">
       <span>N</span><span>O</span><span>T</span><span>E</span> BOOK
     </div>
-    <img class="imagen" src="https://pngimg.com/uploads/hello_kitty/hello_kitty_PNG20.png" alt="Peluche Kawaii">
-    <div class="etiqueta">PARA MI PRINCESA ABI</div>
-    <img class="imagen" src="https://pngimg.com/uploads/hello_kitty/hello_kitty_PNG43.png" alt="Sundae Kawaii">
+    <img class="imagen-portada" src="https://pngimg.com/uploads/hello_kitty/hello_kitty_PNG20.png" alt="Hello Kitty Stand">
+    <div class="etiqueta-portada">PARA MI PRINCESA ABI</div>
+    <img class="imagen-portada" src="https://pngimg.com/uploads/hello_kitty/hello_kitty_PNG19.png" alt="Hello Kitty Sit">
     
     <div class="decoracion corazon" style="top: 20px; left: 80px;">❤</div>
     <div class="decoracion estrella" style="top: 50px; right: 50px;">★</div>
     <div class="decoracion estrella" style="bottom: 80px; left: 40px;">★</div>
     <div class="decoracion corazon" style="bottom: 60px; right: 80px;">❤</div>
     
+    <div class="inferior">hecho por myeya</div>
   </div>
 
   <div id="paginaInterior">
-    <button class="cerrar" onclick="cerrarCuaderno()">✿ Cerrar</button>
-    
-   <div class="cuaderno-abierto">
+    <div class="cuaderno-abierto">
       
-      <div class="vista-paginas" id="vista1">
-        <div class="hoja">
-          <div class="marco-celeste">
-            <h2>✧ ¡MI PRINCESA ABI! ✧</h2>
-            <img src="https://pngimg.com/uploads/hello_kitty/hello_kitty_PNG20.png" style="width: 80px; margin: 10px auto;">
-            
-            <p>Quiero agradecerte por hacer de mi vida la mejor. Desde el día en que te conocí fui descubriendo este gran amor que siento por ti. Te amo con toda mi vida; no tengo palabras para describirlo.</p>
-            <p>Eres mi sol y mi luna, siempre brillando, y no hay nadie que pueda superarlos.</p>
-            
-            <img src="https://pngimg.com/uploads/hello_kitty/hello_kitty_PNG43.png" style="width: 60px; position: absolute; bottom: 20px; left: 20px;">
-            <div class="decoracion estrella" style="bottom: 40px; right: 30px;">★</div>
+      <div class="hoja" id="hoja1">
+        <div class="marco-celeste">
+          <h2>✧ ¡FELIZ ANIVERSARIO! ✧</h2>
+          <img src="https://pngimg.com/uploads/hello_kitty/hello_kitty_PNG20.png" style="width: 80px; margin: 10px auto;">
+          <p>Quiero agradecerte por hacer de mi vida la mejor. Desde el día en que te conocí fui descubriendo este gran amor que siento por ti.</p>
+          <p>Te amo con toda mi vida; no tengo palabras para describirlo. Eres mi sol y mi luna, siempre brillando, y no hay nadie que pueda superarlos.</p>
+          <img src="https://pngimg.com/uploads/hello_kitty/hello_kitty_PNG43.png" style="width: 60px; position: absolute; bottom: 15px; left: 15px;">
+          <div style="text-align: right; margin-top: 20px;">
+            <button class="btn-pag" onclick="cambiarPagina(2)">Siguiente ➔</button>
           </div>
         </div>
-        
-        <div class="hoja"> 
-          <div class="marco-celeste">
-            <div class="decoracion corazon" style="top: 10px; right: 20px; font-size: 1.5em;">❤</div>
-            
-            <p style="margin-top: 15px;">Eres mi vida, y cada día que pasa es sensacional porque lo comparto a tu lado. Tus labios, tu carita, tu forma de ser… todo de ti es maravilloso, amor. Eres una obra perfecta, hecha sin errores.</p>
-            <p>No puedo evitar sentir miedo de perderte, porque quiero que estés conmigo siempre, formando ese hogar que tanto deseamos.</p>
-            
-            <div class="etiqueta-interior">PARA MI PRINCESA ABI</div>
-            
-            <div style="text-align: right; margin-top: 20px;">
-              <button class="btn-pag" onclick="cambiarPagina(2)">Siguiente ➔</button>
-            </div>
+      </div>
+      
+      <div class="hoja" id="hoja2" style="display: none;"> 
+        <div class="marco-celeste">
+          <p>Eres mi vida, y cada día que pasa es sensacional porque lo comparto a tu lado.</p>
+          <p>Tus labios, tu carita, tu forma de ser… todo de ti es maravilloso, amor. Eres una obra perfecta, hecha sin errores.</p>
+          <p>No puedo evitar sentir miedo de perderte, porque quiero que estés conmigo siempre, formando ese hogar que tanto deseamos.</p>
+          <div style="text-align: left; margin-top: 20px;">
+            <button class="btn-pag" onclick="cambiarPagina(1)">🡨 Anterior</button>
+          </div>
+          <div style="text-align: right; margin-top: -38px;">
+            <button class="btn-pag" onclick="cambiarPagina(3)">Siguiente ➔</button>
           </div>
         </div>
       </div>
 
-      <div class="vista-paginas" id="vista2" style="display: none;">
-        <div class="hoja">
-          <div class="marco-celeste">
-            <p style="margin-top: 20px;">En estos 10 meses hemos vivido muchas experiencias, y le doy gracias a Dios porque hemos podido salir adelante, a pesar de los días malos y buenos. El amor que tenemos es más fuerte y nos impulsa a seguir.</p>
-            <p>Quería hacerte este pequeño detalle para que tengas muy presente que perteneces a mi corazón, y de ahí nunca saldrás. Eres mi estrella fugaz, con esos cachetitos hermosos que me dan ganas de comérmelos.</p>
-            
-            <div style="text-align: left; margin-top: 30px;">
-              <button class="btn-pag" onclick="cambiarPagina(1)">🡨 Anterior</button>
-            </div>
+      <div class="hoja" id="hoja3" style="display: none;">
+        <div class="marco-celeste">
+          <p>En estos 10 meses hemos vivido muchas experiencias, y le doy gracias a Dios porque hemos podido salir adelante, a pesar de los días malos y buenos.</p>
+          <p>El amor que tenemos es más fuerte y nos impulsa a seguir.</p>
+          <p>Quería hacerte este pequeño detalle para que tengas muy presente que perteneces a mi corazón, y de ahí nunca saldrás.</p>
+          <div style="text-align: left; margin-top: 20px;">
+            <button class="btn-pag" onclick="cambiarPagina(2)">🡨 Anterior</button>
           </div>
-        </div>
-
-        <div class="hoja">
-          <div class="marco-celeste">
-            <img src="https://pngimg.com/uploads/hello_kitty/hello_kitty_PNG20.png" style="width: 80px; margin: 10px auto;">
-            
-            <p>Perdón si a veces no he sido suficiente para ti, pero créeme que quiero seguir luchando para hacerte feliz. Perdón si alguna vez te he lastimado; nunca ha sido mi intención.</p>
-            <p>Soy muy feliz, estoy viviendo la vida que siempre anhelé. Te extraño en cada momento en que no estás conmigo, pero quiero decirte que te amo demasiado.</p>
-            
-            <h2 style="margin-top: 20px; font-size: 1.2em;">TE ADORO MÁS DE LO QUE TE IMAGINAS</h2> 
+          <div style="text-align: right; margin-top: -38px;">
+            <button class="btn-pag" onclick="cambiarPagina(4)">Siguiente ➔</button>
           </div>
         </div>
       </div>
 
+      <div class="hoja" id="hoja4" style="display: none;">
+        <div class="marco-celeste">
+          <img src="https://pngimg.com/uploads/hello_kitty/hello_kitty_PNG19.png" style="width: 80px; margin: 10px auto;">
+          <p>Eres mi estrella fugaz, con esos cachetitos hermosos que me dan ganas de comérmelos.</p>
+          <p>Perdón si a veces no he sido suficiente para ti, pero créeme que quiero seguir luchando para hacerte feliz. Perdón si alguna vez te he lastimado; nunca ha sido mi intención.</p>
+          <p>Soy muy feliz, estoy viviendo la vida que siempre anhelé. Te extraño en cada momento en que no estás conmigo, pero quiero decirte que te amo demasiado.</p>
+          <h2>TE ADORO MÁS DE LO QUE TE IMAGINAS</h2> 
+          <div style="text-align: left; margin-top: 20px;">
+            <button class="btn-pag" onclick="cambiarPagina(3)">🡨 Anterior</button>
+          </div>
+        </div>
+      </div>
     </div>
+  </div>
 
   <script src="script.js"></script>
 </body>

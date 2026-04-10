@@ -2,13 +2,9 @@ function abrirCuaderno() {
   const portada = document.getElementById('portada');
   const interior = document.getElementById('paginaInterior');
   
-  // 1. Iniciamos la animación de la portada
   portada.classList.add('abrir-animacion');
-  
-  // 2. Mostramos el contenedor (aún invisible por la opacidad 0)
   interior.style.display = 'flex';
   
-  // 3. Un pequeño truco para que el navegador registre el display:flex antes de cambiar la opacidad
   setTimeout(() => {
     interior.classList.add('mostrar-animacion');
   }, 50);
@@ -18,24 +14,49 @@ function cerrarCuaderno() {
   const portada = document.getElementById('portada');
   const interior = document.getElementById('paginaInterior');
   
-  // 1. Ocultamos el interior suavemente
   interior.classList.remove('mostrar-animacion');
   
-  // 2. Esperamos a que termine el desvanecimiento para ocultarlo del todo y regresar la portada
   setTimeout(() => {
     interior.style.display = 'none';
     portada.classList.remove('abrir-animacion');
+    // Regresamos a la página 1 cuando se cierra el cuaderno
+    cambiarPagina(1);
   }, 800);
 }
+
 function cambiarPagina(numeroVista) {
-  // Ocultamos ambas vistas primero
-  document.getElementById('vista1').style.display = 'none';
-  document.getElementById('vista2').style.display = 'none';
-  
-  // Mostramos solo la que queremos ver
-  if (numeroVista === 1) {
-    document.getElementById('vista1').style.display = 'flex';
+  const hojas = [
+    document.getElementById('hoja1'),
+    document.getElementById('hoja2'),
+    document.getElementById('hoja3'),
+    document.getElementById('hoja4')
+  ];
+
+  // Verificamos si la pantalla es grande (PC) o pequeña (Celular)
+  if (window.innerWidth > 850) {
+    // Modo PC: Muestra dos hojas a la vez (1 y 2, o 3 y 4)
+    if (numeroVista === 1 || numeroVista === 2) {
+      hojas[0].style.display = 'flex';
+      hojas[1].style.display = 'flex';
+      hojas[2].style.display = 'none';
+      hojas[3].style.display = 'none';
+    } else {
+      hojas[0].style.display = 'none';
+      hojas[1].style.display = 'none';
+      hojas[2].style.display = 'flex';
+      hojas[3].style.display = 'flex';
+    }
   } else {
-    document.getElementById('vista2').style.display = 'flex';
+    // Modo Celular: Muestra solo la hoja que el botón pide
+    hojas.forEach((hoja, index) => {
+      if (index + 1 === numeroVista) {
+        hoja.style.display = 'flex';
+      } else {
+        hoja.style.display = 'none';
+      }
+    });
   }
 }
+
+// Ejecutar una vez al cargar la página para asegurar que todo empiece en la hoja 1
+cambiarPagina(1);
